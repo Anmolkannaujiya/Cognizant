@@ -1,3 +1,5 @@
+package factorymethod;
+
 public class EmailNotification implements Notification {
 
     @Override

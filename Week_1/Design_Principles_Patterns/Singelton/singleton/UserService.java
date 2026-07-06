@@ -1,3 +1,5 @@
+package singleton;
+
 public class UserService {
 
     public void login(String username) {

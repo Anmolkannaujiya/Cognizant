@@ -1,3 +1,5 @@
+package singleton;
+
 public class OrderService {
 
     public void createOrder(int orderId) {

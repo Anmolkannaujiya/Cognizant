@@ -1,3 +1,5 @@
+package factorymethod;
+
 public class NotificationFactory {
 
     public Notification createNotification(String type) {

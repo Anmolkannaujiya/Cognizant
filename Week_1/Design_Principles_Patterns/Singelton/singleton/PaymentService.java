@@ -1,3 +1,5 @@
+package singleton;
+
 public class PaymentService {
 
     public void makePayment(double amount) {

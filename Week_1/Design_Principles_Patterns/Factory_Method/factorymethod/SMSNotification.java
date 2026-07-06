@@ -1,3 +1,5 @@
+package factorymethod;
+
 public class SMSNotification implements Notification {
 
     @Override
