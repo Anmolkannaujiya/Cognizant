@@ -6,11 +6,33 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- ================================================= -->
+    <!-- Exercise 1 & Exercise 5 -->
+    <!-- Bean Definition -->
+    <!-- ================================================= -->
+
     <bean id="bookRepository"
           class="com.library.repository.BookRepository"/>
 
+    <!-- ================================================= -->
+    <!-- Exercise 1 & Exercise 5 -->
+    <!-- Bean Definition -->
+    <!-- ================================================= -->
+
     <bean id="bookService"
           class="com.library.service.BookService">
+
+        <!-- ============================================= -->
+        <!-- Exercise 7 -->
+        <!-- Constructor Injection -->
+        <!-- ============================================= -->
+
+        <constructor-arg ref="bookRepository"/>
+
+        <!-- ============================================= -->
+        <!-- Exercise 2 & Exercise 5 -->
+        <!-- Setter Injection -->
+        <!-- ============================================= -->
 
         <property
                 name="repository"

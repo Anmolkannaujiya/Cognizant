@@ -1,15 +1,16 @@
-# Week 2 - Exercise 1
-# Configuring a Basic Spring Application
+# Library Management - Spring Core (Week 2)
 
-## Objective
+## Overview
 
-The objective of this exercise is to understand the fundamentals of the Spring Framework by creating a basic Spring Core application using XML-based configuration. The exercise demonstrates how Spring's Inversion of Control (IoC) container manages object creation and dependency injection.
+This project is a combined implementation of the following Cognizant Deep Skilling Week 2 exercises:
 
----
+- Exercise 1 – Configuring a Basic Spring Application
+- Exercise 2 – Implementing Dependency Injection
+- Exercise 4 – Creating and Configuring a Maven Project
+- Exercise 5 – Configuring the Spring IoC Container
+- Exercise 7 – Implementing Constructor and Setter Injection
 
-## Scenario
-
-A company is developing a web application for managing a library. Instead of manually creating objects using the `new` keyword, the application uses the Spring Framework to manage object creation and dependencies.
+The project demonstrates the fundamental concepts of the Spring Framework, including Spring IoC, Dependency Injection, XML-based bean configuration, and Maven project setup.
 
 ---
 
@@ -19,7 +20,6 @@ A company is developing a web application for managing a library. Instead of man
 - Spring Framework 6.x
 - Maven
 - IntelliJ IDEA
-- XML Configuration
 
 ---
 
@@ -36,74 +36,106 @@ LibraryManagement
     ├── java
     │   └── com
     │       └── library
-    │           ├── MainApp.java
+    │           ├── Main.java
     │           ├── repository
     │           │      └── BookRepository.java
     │           └── service
     │                  └── BookService.java
     │
     └── resources
-           └── applicationContext.xml
+            └── applicationContext.xml
 ```
 
 ---
 
-## Features
+## Exercises Implemented
 
-- Maven project setup
-- Spring Core dependency integration
-- XML-based bean configuration
-- Bean creation using Spring IoC Container
-- Setter-based Dependency Injection
-- Loading Spring Application Context
-- Retrieving beans from the Spring container
+### Exercise 1 – Configuring a Basic Spring Application
+
+- Created a Maven project.
+- Added Spring Core dependency.
+- Configured `applicationContext.xml`.
+- Defined Spring beans.
+- Loaded the Spring IoC Container.
+- Retrieved beans from the container.
+
+---
+
+### Exercise 2 – Implementing Dependency Injection
+
+- Implemented Setter Injection.
+- Wired `BookRepository` into `BookService`.
+- Verified Dependency Injection using Spring IoC.
+
+---
+
+### Exercise 4 – Creating and Configuring a Maven Project
+
+- Configured the Maven project.
+- Added Spring Context dependency.
+- Added Spring AOP dependency.
+- Added Spring Web MVC dependency.
+- Configured the Maven Compiler properties.
+
+---
+
+### Exercise 5 – Configuring the Spring IoC Container
+
+- Configured Spring IoC Container using XML.
+- Managed bean creation through `applicationContext.xml`.
+- Demonstrated bean management and dependency configuration.
+
+> **Note:** This exercise builds upon Exercises 1 and 2, so the implementation is largely the same.
+
+---
+
+### Exercise 7 – Constructor and Setter Injection
+
+- Implemented Constructor Injection.
+- Implemented Setter Injection.
+- Configured both injection techniques using XML.
+- Verified successful dependency injection.
 
 ---
 
 ## Spring Concepts Covered
 
-### Inversion of Control (IoC)
-
-Spring takes control of creating and managing Java objects (beans) instead of the programmer creating them manually.
-
-### Dependency Injection (DI)
-
-Spring automatically injects required dependencies into a class. In this exercise, `BookRepository` is injected into `BookService` using Setter Injection.
-
-### Bean
-
-A bean is a Java object that is created and managed by the Spring IoC Container.
-
-### Application Context
-
-`applicationContext.xml` contains the bean definitions and dependency configuration used by the Spring container.
+- Spring IoC Container
+- Bean Configuration
+- XML Configuration
+- Dependency Injection (DI)
+- Setter Injection
+- Constructor Injection
+- Maven Dependency Management
 
 ---
 
 ## Execution Flow
 
 ```
-MainApp
-   │
-   ▼
-Loads applicationContext.xml
-   │
-   ▼
-Spring IoC Container Starts
-   │
-   ├── Creates BookRepository Bean
-   │
-   ├── Creates BookService Bean
-   │
-   ├── Injects BookRepository into BookService
-   │
-   ▼
+Main
+ │
+ ▼
+Load applicationContext.xml
+ │
+ ▼
+Spring IoC Container
+ │
+ ├── Creates BookRepository Bean
+ │
+ ├── Creates BookService Bean
+ │
+ ├── Performs Constructor Injection
+ │
+ ├── Performs Setter Injection
+ │
+ ▼
 Returns BookService Bean
-   │
-   ▼
+ │
+ ▼
 displayService()
-   │
-   ▼
+ │
+ ▼
 displayRepository()
 ```
 
@@ -112,6 +144,8 @@ displayRepository()
 ## Expected Output
 
 ```
+Constructor Injection Executed
+Setter Injection Executed
 Book Service is working...
 Book Repository is working...
 ```
@@ -120,14 +154,20 @@ Book Repository is working...
 
 ## Learning Outcomes
 
-After completing this exercise, you will be able to:
+After completing this project, you will be able to:
 
 - Create a Maven-based Spring project.
 - Configure Spring using XML.
-- Define and manage beans in the Spring IoC Container.
+- Understand Spring IoC Container.
+- Configure Spring Beans.
 - Perform Setter-based Dependency Injection.
-- Load the Spring Application Context.
-- Retrieve and use Spring-managed beans.
+- Perform Constructor-based Dependency Injection.
+- Manage dependencies using Maven.
 
 ---
 
+## Author
+
+**Anmol Kannaujiya**
+
+Cognizant Deep Skilling Program – Week 2
