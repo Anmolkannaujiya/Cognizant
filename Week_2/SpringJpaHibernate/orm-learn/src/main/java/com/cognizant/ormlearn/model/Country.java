@@ -5,17 +5,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "country")
+// Hands-on 1 & 5
+// This class represents the 'country' table in our ormlearn database
+// JPA needs this to know how to map the object to a table row
+
+@Entity  // tells hibernate this is a DB entity
+@Table(name = "country")  // maps to the country table
 public class Country {
 
+    // primary key - maps to co_code column in DB
     @Id
-    @Column(name = "code")
+    @Column(name = "co_code")
     private String code;
 
-    @Column(name = "name")
+    // maps to co_name column
+    @Column(name = "co_name")
     private String name;
 
+    // JPA needs a default constructor, so adding it
     public Country() {
     }
 
@@ -35,6 +42,7 @@ public class Country {
         this.name = name;
     }
 
+    // just for printing/logging purposes
     @Override
     public String toString() {
         return "Country{" +
