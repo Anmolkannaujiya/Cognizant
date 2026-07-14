@@ -12,7 +12,7 @@
     <artifactId>orm-learn</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>orm-learn</name>
-    <description>orm-learn</description>
+    <description>Demo project for Spring Data JPA and Hibernate</description>
     <url/>
     <licenses>
         <license/>
