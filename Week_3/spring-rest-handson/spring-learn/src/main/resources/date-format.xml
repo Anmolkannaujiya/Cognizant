@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Hands-On 1 (Hands-On 2 in spring-rest-handson file):
+    Spring Core - Load SimpleDateFormat from Spring Configuration XML
+
+    This XML defines a Spring bean for SimpleDateFormat with pattern 'dd/MM/yyyy'
+    so that it can be reused across the application without creating
+    multiple instances manually.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        Bean Definition: dateFormat
+        Class: java.text.SimpleDateFormat
+        Constructor Arg: 'dd/MM/yyyy' - the date pattern
+        Usage: context.getBean("dateFormat", SimpleDateFormat.class)
+    -->
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd/MM/yyyy"/>
+    </bean>
+
+</beans>
