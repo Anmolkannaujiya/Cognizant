@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Hands-On 3 (spring-rest-handson):
+    Static employee and department data loaded via Spring XML configuration.
+
+    Contains:
+      - Department beans (dept1..dept3)
+      - Skill string values (reused across employees)
+      - Employee beans (emp1..emp4) using sample data from Angular module
+      - departmentList ArrayList bean
+      - employeeList ArrayList bean
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===== DEPARTMENTS ===== -->
+
+    <bean id="dept1" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="Engineering"/>
+    </bean>
+
+    <bean id="dept2" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="2"/>
+        <property name="name" value="Human Resources"/>
+    </bean>
+
+    <bean id="dept3" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="3"/>
+        <property name="name" value="Finance"/>
+    </bean>
+
+    <!-- ===== EMPLOYEES ===== -->
+    <!--
+        Employee data matches the sample data previously hardcoded
+        in the Angular component. Skills are reused across employees.
+    -->
+
+    <bean id="emp1" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Alice Johnson"/>
+        <property name="department" value="Engineering"/>
+        <property name="designation" value="Senior Developer"/>
+        <property name="salary" value="95000"/>
+        <property name="skills">
+            <list>
+                <value>Java</value>
+                <value>Spring Boot</value>
+                <value>Angular</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="emp2" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="2"/>
+        <property name="name" value="Bob Smith"/>
+        <property name="department" value="Engineering"/>
+        <property name="designation" value="Tech Lead"/>
+        <property name="salary" value="110000"/>
+        <property name="skills">
+            <list>
+                <value>Java</value>
+                <value>Microservices</value>
+                <value>Docker</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="emp3" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="3"/>
+        <property name="name" value="Carol Williams"/>
+        <property name="department" value="Human Resources"/>
+        <property name="designation" value="HR Manager"/>
+        <property name="salary" value="75000"/>
+        <property name="skills">
+            <list>
+                <value>Recruitment</value>
+                <value>Payroll</value>
+                <value>Communication</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="emp4" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="4"/>
+        <property name="name" value="David Brown"/>
+        <property name="department" value="Finance"/>
+        <property name="designation" value="Financial Analyst"/>
+        <property name="salary" value="82000"/>
+        <property name="skills">
+            <list>
+                <value>Excel</value>
+                <value>SAP</value>
+                <value>Accounting</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ===== LISTS ===== -->
+
+    <!--
+        departmentList: ArrayList of all Department beans
+        Used by DepartmentDao.getAllDepartments() -> GET /departments
+    -->
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="dept1"/>
+                <ref bean="dept2"/>
+                <ref bean="dept3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--
+        employeeList: ArrayList of all Employee beans
+        Used by EmployeeDao.getAllEmployees() -> GET /employees
+    -->
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+                <ref bean="emp3"/>
+                <ref bean="emp4"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
